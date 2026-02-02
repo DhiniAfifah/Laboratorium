@@ -12,3 +12,21 @@ window.addEventListener('scroll', () => {
         nav.style.borderBottom = 'none';
     }
 });
+
+// Mobile Menu Toggle
+document.addEventListener('click', function(e) {
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (menuToggle && (menuToggle.contains(e.target) || e.target === menuToggle)) {
+        navLinks.classList.toggle('active');
+        const icon = menuToggle.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    } else if (navLinks && navLinks.classList.contains('active') && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('active');
+        const icon = document.querySelector('#mobile-menu i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+    }
+});

@@ -509,12 +509,148 @@ footer {
     opacity: 0.5;
 }
 
-@media (max-width: 992px) {
+/* Mobile Menu Toggle Styling */
+.menu-toggle {
+    display: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    nav {
+        padding: 0 5%;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 80px;
+        flex-direction: column;
+        background: var(--primary-dark);
+        width: 80%;
+        height: calc(100vh - 80px);
+        transition: 0.4s;
+        box-shadow: -10px 0 20px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: flex-start;
+        padding-top: 30px;
+        overflow-y: auto;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links > li {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .nav-links a {
+        padding: 15px 30px;
+        width: 100%;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: rgba(255,255,255,0.05);
+        box-shadow: none;
+        display: none;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .nav-links li:hover .dropdown {
+        display: block;
+    }
+
+    .dropdown li a {
+        color: rgba(255,255,255,0.7);
+        padding-left: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+
+    .welcome {
+        padding: 60px 5%;
+    }
+
+    .welcome-content {
+        padding: 25px;
+    }
+
+    .lab-selection {
+        gap: 40px;
+        padding: 40px 5%;
+    }
+
+    .lab-card {
+        width: 100%;
+    }
+
+    .lab-card-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .lab-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .gallery {
+        padding: 60px 5%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 300px;
+    }
+
     .about-section {
         flex-direction: column;
         padding: 60px 5%;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .contact-info {
+        text-align: left;
+    }
+
+    .links-container {
+        justify-content: center;
+        text-align: center;
+    }
+
+    footer {
+        padding: 60px 5% 30px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 }
+
 
 
 

@@ -31,8 +31,8 @@ const navbarHTML = `
             <li><a href="#">Lembar Kerja Praktikum</a></li>
         </ul>
 
-        <div class="search-btn">
-            <i class="fas fa-search"></i>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
         </div>
     </nav>
 `;
