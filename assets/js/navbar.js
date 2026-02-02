@@ -17,7 +17,7 @@ const navbarHTML = `
                 </ul>
             </li>
             <li>
-                <a href="steril.html">Lab Steril <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                <a href="tekfar.html">Lab TekFar <i class="fas fa-chevron-down dropdown-icon"></i></a>
                 <ul class="dropdown">
                     <li><a href="#">Daftar Alat Lab</a></li>
                     <li><a href="#">Daftar Bahan Habis Pakai</a></li>
