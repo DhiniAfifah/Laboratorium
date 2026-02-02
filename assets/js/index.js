@@ -33,3 +33,27 @@ document.addEventListener('click', function(e) {
         icon.classList.remove('fa-times');
     }
 });
+
+// Mobile Accordion Toggle for Dropdowns
+document.addEventListener('click', function(e) {
+    if (window.innerWidth <= 1024) {
+        const link = e.target.closest('.nav-links > li > a');
+        if (link) {
+            const parent = link.parentElement;
+            const dropdown = parent.querySelector('.dropdown');
+            
+            if (dropdown) {
+                e.preventDefault();
+                parent.classList.toggle('open');
+                
+                // Rotate icon if exists
+                const icon = link.querySelector('.dropdown-icon');
+                if (icon) {
+                    icon.style.transition = '0.3s';
+                    icon.style.transform = parent.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0)';
+                }
+            }
+        }
+    }
+});
+

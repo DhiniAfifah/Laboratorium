@@ -588,18 +588,31 @@ footer {
         transform: none;
         background: rgba(255,255,255,0.05);
         box-shadow: none;
-        display: none;
+        display: none; /* Hidden by default on mobile */
         width: 100%;
         border-radius: 0;
+        padding: 0;
     }
 
-    .nav-links li:hover .dropdown {
+    .nav-links li.open .dropdown {
         display: block;
+    }
+
+    /* Animation for accordion */
+    .dropdown li {
+        animation: fadeIn 0.3s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     .dropdown li a {
         color: rgba(255,255,255,0.7);
-        padding-left: 50px;
+        padding: 12px 0 12px 60px;
+        font-size: 0.9rem;
+        border-bottom: 1px solid rgba(255,255,255,0.03);
     }
 }
 
