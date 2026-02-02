@@ -35,6 +35,8 @@ const navbarHTML = `
             <i class="fas fa-bars"></i>
         </div>
     </nav>
+    <div class="nav-overlay" id="nav-overlay"></div>
+
 `;
 
 document.getElementById('navbar-container').innerHTML = navbarHTML;

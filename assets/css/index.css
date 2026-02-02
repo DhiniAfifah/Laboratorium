@@ -517,6 +517,26 @@ footer {
     cursor: pointer;
 }
 
+/* Full-Height Side Slide & Overlay */
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 @media (max-width: 1024px) {
     nav {
         padding: 0 5%;
@@ -524,22 +544,24 @@ footer {
     
     .menu-toggle {
         display: block;
+        z-index: 1001; /* Above panel */
     }
 
     .nav-links {
         position: fixed;
-        right: -100%;
-        top: 80px;
+        right: -300px; /* Width of the panel */
+        top: 0;
         flex-direction: column;
         background: var(--primary-dark);
-        width: 80%;
-        height: calc(100vh - 80px);
-        transition: 0.4s;
-        box-shadow: -10px 0 20px rgba(0,0,0,0.2);
+        width: 300px;
+        height: 100vh;
+        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -15px 0 30px rgba(0,0,0,0.3);
         display: flex;
         align-items: flex-start;
-        padding-top: 30px;
+        padding-top: 100px; /* Space for logo/toggle */
         overflow-y: auto;
+        z-index: 1000;
     }
 
     .nav-links.active {
@@ -549,14 +571,14 @@ footer {
     .nav-links > li {
         width: 100%;
         height: auto;
-        display: block;
     }
 
     .nav-links a {
-        padding: 15px 30px;
+        padding: 20px 40px;
         width: 100%;
-        font-size: 1rem;
+        font-size: 1.1rem;
         border-bottom: 1px solid rgba(255,255,255,0.05);
+        color: white;
     }
 
     .dropdown {
