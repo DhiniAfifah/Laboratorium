@@ -571,6 +571,7 @@ footer {
     .nav-links > li {
         width: 100%;
         height: auto;
+        display: block; /* Ensure block display to stack content vertically */
     }
 
     .nav-links a {
@@ -579,6 +580,8 @@ footer {
         font-size: 1.1rem;
         border-bottom: 1px solid rgba(255,255,255,0.05);
         color: white;
+        display: block; /* Change from flex to block on mobile */
+        height: auto;
     }
 
     .dropdown {
