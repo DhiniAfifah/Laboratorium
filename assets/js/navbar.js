@@ -2,26 +2,24 @@ const navbarHTML = `
     <nav>
         <div class="logo">
             <i class="fas fa-flask" style="color: #3498db; font-size: 1.5rem;"></i>
-            <span>DIGILAB PROFILE</span>
+            <span>Teknologi Farmasi UNSRI</span>
         </div>
         
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="#">Layanan Laboratorium</a></li>
             <li>
-                <a href="dispensing.html">Lab Dispensing <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                <a href="farmasetika.html">Lab Farmasetika <i class="fas fa-chevron-down dropdown-icon"></i></a>
                 <ul class="dropdown">
-                    <li><a href="#">Daftar Alat Lab</a></li>
-                    <li><a href="#">Daftar Bahan Habis Pakai</a></li>
-                    <li><a href="#">Tata Tertib Lab</a></li>
+                    <li><a href="farmasetika.html#alat">Daftar Alat Lab</a></li>
+                    <li><a href="farmasetika.html#bahan">Daftar Bahan Lab</a></li>
                 </ul>
             </li>
             <li>
                 <a href="tekfar.html">Lab TekFar <i class="fas fa-chevron-down dropdown-icon"></i></a>
                 <ul class="dropdown">
-                    <li><a href="#">Daftar Alat Lab</a></li>
-                    <li><a href="#">Daftar Bahan Habis Pakai</a></li>
-                    <li><a href="#">Tata Tertib Lab</a></li>
+                    <li><a href="tekfar.html#alat">Daftar Alat Lab</a></li>
+                    <li><a href="tekfar.html#bahan">Daftar Bahan Lab</a></li>
                 </ul>
             </li>
             <li><a href="#">Lab Virtual</a></li>
