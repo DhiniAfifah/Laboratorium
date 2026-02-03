@@ -11,15 +11,15 @@ const navbarHTML = `
             <li>
                 <a href="farmasetika.html">Lab Farmasetika <i class="fas fa-chevron-down dropdown-icon"></i></a>
                 <ul class="dropdown">
-                    <li><a href="farmasetika.html#alat">Daftar Alat Lab</a></li>
-                    <li><a href="farmasetika.html#bahan">Daftar Bahan Lab</a></li>
+                    <li><a href="farmasetika.html">Daftar Alat Lab</a></li>
+                    <li><a href="farmasetika.html">Daftar Bahan Lab</a></li>
                 </ul>
             </li>
             <li>
                 <a href="tekfar.html">Lab TekFar <i class="fas fa-chevron-down dropdown-icon"></i></a>
                 <ul class="dropdown">
-                    <li><a href="tekfar.html#alat">Daftar Alat Lab</a></li>
-                    <li><a href="tekfar.html#bahan">Daftar Bahan Lab</a></li>
+                    <li><a href="tekfar.html">Daftar Alat Lab</a></li>
+                    <li><a href="tekfar.html">Daftar Bahan Lab</a></li>
                 </ul>
             </li>
             <li><a href="#">Lab Virtual</a></li>

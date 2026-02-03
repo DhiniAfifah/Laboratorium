@@ -55,65 +55,10 @@ nav {
     font-weight: 600;
 }
 
-/* Lab Shortcuts (Alat & Bahan) */
-.lab-shortcuts {
+.nav-links {
     display: flex;
-    justify-content: center;
-    gap: 100px;
-    margin-top: 50px;
-    flex-wrap: wrap;
-}
-
-.shortcut-item {
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: var(--transition);
-    max-width: 180px;
-}
-
-.shortcut-item img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    margin-bottom: 20px;
-    transition: var(--transition);
-}
-
-.shortcut-item span {
-    color: var(--primary-color);
-    font-size: 1.25rem;
-    font-weight: 700;
-    text-decoration: underline;
-    text-underline-offset: 5px;
-    text-align: center;
-    line-height: 1.3;
-}
-
-.shortcut-item:hover {
-    transform: translateY(-8px);
-}
-
-.shortcut-item:hover img {
-    filter: drop-shadow(0 10px 15px rgba(26, 58, 95, 0.1));
-}
-
-.shortcut-item:hover span {
-    color: var(--accent-color);
-}
-
-@media (max-width: 768px) {
-    .lab-shortcuts {
-        gap: 40px;
-    }
-    .shortcut-item img {
-        width: 80px;
-        height: 80px;
-    }
-    .shortcut-item span {
-        font-size: 1.1rem;
-    }
+    list-style: none;
+    height: 100%;
 }
 
 
@@ -745,84 +690,152 @@ footer {
     }
 }
 
-/* Lab Lists Section (Alat & Bahan) */
-.lab-lists-section {
-    padding: 60px 10%;
-    background: white;
+
+
+/* Lab Shortcuts (Alat & Bahan) */
+.lab-shortcuts {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 50px;
+    flex-wrap: wrap;
 }
 
-.list-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.item-card {
-    background: #f8fafc;
-    padding: 30px;
-    border-radius: 15px;
-    border: 1px solid #e2e8f0;
+.shortcut-item {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transition: var(--transition);
-    text-align: left;
-    position: relative;
-    overflow: hidden;
+    max-width: 180px;
 }
 
-.item-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 5px;
-    height: 100%;
-    background: var(--accent-color);
-}
-
-.item-card.accent::before {
-    background: #27ae60; /* Soft Green for materials */
-}
-
-.item-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    background: white;
-}
-
-.item-icon {
-    font-size: 2rem;
-    color: var(--primary-color);
+.shortcut-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
     margin-bottom: 20px;
+    transition: var(--transition);
 }
 
-.item-card h3 {
+.shortcut-item span {
     color: var(--primary-color);
     font-size: 1.25rem;
-    margin-bottom: 12px;
     font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-align: center;
+    line-height: 1.3;
 }
 
-.item-card p {
-    color: #64748b;
-    font-size: 0.95rem;
-    line-height: 1.5;
+.shortcut-item:hover {
+    transform: translateY(-8px);
 }
 
-/* Responsive for Tool Cards */
+.shortcut-item:hover img {
+    filter: drop-shadow(0 10px 15px rgba(26, 58, 95, 0.1));
+}
+
+.shortcut-item:hover span {
+    color: var(--accent-color);
+}
+
 @media (max-width: 768px) {
-    .lab-lists-section {
-        padding: 40px 5%;
+    .lab-shortcuts {
+        gap: 40px;
     }
-    
-    .card-grid {
-        grid-template-columns: 1fr;
+    .shortcut-item img {
+        width: 80px;
+        height: 80px;
     }
 }
+/* Wide Gallery Layout for Farmasetika */
+.gallery-grid-wide {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 1400px;
+    margin: 40px auto 0;
+}
+
+.gallery-grid-wide .gallery-item {
+    height: 350px; /* Reduced height for a more cinematic horizontal look */
+}
+
+@media (max-width: 768px) {
+    .gallery-grid-wide {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Gallery Slider for TekFar */
+.gallery-slider-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 0 60px;
+}
+
+.gallery-slider {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 10px 0 30px;
+    scrollbar-width: none;
+}
+
+.gallery-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-slider .gallery-item {
+    flex: 0 0 calc(33.333% - 20px);
+    scroll-snap-align: start;
+    height: 400px;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: var(--transition);
+}
+
+.slider-btn:hover {
+    background: var(--accent-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slider-btn.prev { left: 0; }
+.slider-btn.next { right: 0; }
+
+@media (max-width: 1024px) {
+    .gallery-slider .gallery-item {
+        flex: 0 0 calc(50% - 15px);
+    }
+    .gallery-slider-wrapper { padding: 0 40px; }
+}
+
+@media (max-width: 768px) {
+    .slider-btn { display: none; }
+    .gallery-slider-wrapper { padding: 0; }
+    .gallery-slider .gallery-item {
+        flex: 0 0 100%;
+    }
+}
+
 
 
 
