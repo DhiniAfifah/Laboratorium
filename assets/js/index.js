@@ -57,48 +57,56 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// Gallery Slider Logic for TekFar
-const tekfarSlider = document.getElementById('tekfarSlider');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const tekfarDots = document.getElementById('tekfarDots');
+// Reusable Gallery Slider Function
+function initSlider(sliderId, prevBtnId, nextBtnId, dotsId) {
+    const slider = document.getElementById(sliderId);
+    const prevBtn = document.getElementById(prevBtnId);
+    const nextBtn = document.getElementById(nextBtnId);
+    const dotsContainer = document.getElementById(dotsId);
 
-if (tekfarSlider && prevBtn && nextBtn && tekfarDots) {
-    const items = tekfarSlider.querySelectorAll('.gallery-item');
-    const totalItems = items.length;
-    
-    // Create dots (4 dots for 6 items looks good for smooth scrolling)
-    const numDots = 4; 
-    for (let i = 0; i < numDots; i++) {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => {
-            const scrollPos = (tekfarSlider.scrollWidth - tekfarSlider.clientWidth) * (i / (numDots - 1));
-            tekfarSlider.scrollTo({ left: scrollPos, behavior: 'smooth' });
+    if (slider && prevBtn && nextBtn && dotsContainer) {
+        const items = slider.querySelectorAll('.gallery-item');
+        const numDots = Math.max(2, Math.ceil(items.length / 1.5)); // Dynamic dots based on items
+
+        // Create dots
+        for (let i = 0; i < numDots; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                const scrollPos = (slider.scrollWidth - slider.clientWidth) * (i / (numDots - 1));
+                slider.scrollTo({ left: scrollPos, behavior: 'smooth' });
+            });
+            dotsContainer.appendChild(dot);
+        }
+
+        const updateDots = () => {
+            const scrollPercentage = slider.scrollLeft / (slider.scrollWidth - slider.clientWidth);
+            const activeIndex = Math.round(scrollPercentage * (numDots - 1));
+            const dots = dotsContainer.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeIndex);
+            });
+        };
+
+        slider.addEventListener('scroll', updateDots);
+
+        nextBtn.addEventListener('click', () => {
+            const itemWidth = items[0].offsetWidth + 30;
+            slider.scrollBy({ left: itemWidth, behavior: 'smooth' });
         });
-        tekfarDots.appendChild(dot);
+
+        prevBtn.addEventListener('click', () => {
+            const itemWidth = items[0].offsetWidth + 30;
+            slider.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+        });
     }
-
-    const updateDots = () => {
-        const scrollPercentage = tekfarSlider.scrollLeft / (tekfarSlider.scrollWidth - tekfarSlider.clientWidth);
-        const activeIndex = Math.round(scrollPercentage * (numDots - 1));
-        const dots = tekfarDots.querySelectorAll('.dot');
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === activeIndex);
-        });
-    };
-
-    tekfarSlider.addEventListener('scroll', updateDots);
-
-    nextBtn.addEventListener('click', () => {
-        const itemWidth = items[0].offsetWidth + 30;
-        tekfarSlider.scrollBy({ left: itemWidth, behavior: 'smooth' });
-    });
-
-    prevBtn.addEventListener('click', () => {
-        const itemWidth = items[0].offsetWidth + 30;
-        tekfarSlider.scrollBy({ left: -itemWidth, behavior: 'smooth' });
-    });
 }
+
+// Initialize all sliders on the page
+document.addEventListener('DOMContentLoaded', () => {
+    initSlider('mainSlider', 'mainPrevBtn', 'mainNextBtn', 'mainDots');
+    initSlider('farmSlider', 'farmPrevBtn', 'farmNextBtn', 'farmDots');
+    initSlider('tekfarSlider', 'tekfarPrevBtn', 'tekfarNextBtn', 'tekfarDots');
+});
 

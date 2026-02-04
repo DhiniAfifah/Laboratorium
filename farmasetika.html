@@ -33,32 +33,41 @@
 
     <section class="gallery">
         <h2 class="welcome-title">Galeri Lab Farmasetika</h2>
-        <div class="gallery-grid gallery-grid-wide">
-            <div class="gallery-item">
-                <img src="assets/img/farm1.jpg" alt="Kegiatan Lab Farmasetika 1">
-                <div class="gallery-overlay">
-                    <h4>Lab Farmasetika</h4>
+        <div class="gallery-slider-wrapper">
+            <button class="slider-btn prev" id="farmPrevBtn"><i class="fas fa-chevron-left"></i></button>
+            <div class="gallery-slider" id="farmSlider">
+                <div class="gallery-item">
+                    <img src="assets/img/farm1.jpg" alt="Farm1">
+                    <div class="gallery-overlay">
+                        <h4>Aktivitas Lab</h4>
+                        <p>Praktikum Farmasetika</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/farm2.jpg" alt="Farm2">
+                    <div class="gallery-overlay">
+                        <h4>Instrumen</h4>
+                        <p>Peralatan Farmasetika</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/farm3.jpg" alt="Farm3">
+                    <div class="gallery-overlay">
+                        <h4>Sediaan</h4>
+                        <p>Hasil Praktikum</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/farm4.jpg" alt="Farm4">
+                    <div class="gallery-overlay">
+                        <h4>Area Kerja</h4>
+                        <p>Meja Praktikum</p>
+                    </div>
                 </div>
             </div>
-            <div class="gallery-item">
-                <img src="assets/img/farm2.jpg" alt="Kegiatan Lab Farmasetika 2">
-                <div class="gallery-overlay">
-                    <h4>Lab Farmasetika</h4>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/farm3.jpg" alt="Kegiatan Lab Farmasetika 3">
-                <div class="gallery-overlay">
-                    <h4>Lab Farmasetika</h4>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/farm4.jpg" alt="Kegiatan Lab Farmasetika 4">
-                <div class="gallery-overlay">
-                    <h4>Lab Farmasetika</h4>
-                </div>
-            </div>
+            <button class="slider-btn next" id="farmNextBtn"><i class="fas fa-chevron-right"></i></button>
         </div>
+        <div class="gallery-dots" id="farmDots"></div>
     </section>
 
     <script src="assets/js/navbar.js"></script>

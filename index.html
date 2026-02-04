@@ -48,67 +48,78 @@
 
     <section class="gallery">
         <h2 class="welcome-title">Galeri Laboratorium</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="assets/img/gam2.jpeg" alt="Ruang Praktikum Farmasetika">
-                <div class="gallery-overlay">
-                    <h4>Ruang Praktikum</h4>
-                    <p>Fasilitas Lab Farmasetika</p>
+        <div class="gallery-slider-wrapper">
+            <button class="slider-btn prev" id="mainPrevBtn"><i class="fas fa-chevron-left"></i></button>
+            <div class="gallery-slider" id="mainSlider">
+                <div class="gallery-item">
+                    <img src="assets/img/gam2.jpeg" alt="Ruang Praktikum Farmasetika">
+                    <div class="gallery-overlay">
+                        <h4>Ruang Praktikum</h4>
+                        <p>Fasilitas Lab Farmasetika</p>
+                    </div>
                 </div>
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/gam3.jpeg" alt="Ruang Lab TekFar">
-                <div class="gallery-overlay">
-                    <h4>Area TekFar</h4>
-                    <p>Fasilitas Lab TekFar Modern</p>
+                <div class="gallery-item">
+                    <img src="assets/img/gam3.jpeg" alt="Ruang Lab TekFar">
+                    <div class="gallery-overlay">
+                        <h4>Area TekFar</h4>
+                        <p>Fasilitas Lab TekFar Modern</p>
+                    </div>
                 </div>
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/gam1.jpeg" alt="Peralatan Lab">
-                <div class="gallery-overlay">
-                    <h4>Peralatan Modern</h4>
-                    <p>Instrumen Pendukung Praktikum</p>
+                <div class="gallery-item">
+                    <img src="assets/img/gam1.jpeg" alt="Peralatan Lab">
+                    <div class="gallery-overlay">
+                        <h4>Peralatan Modern</h4>
+                        <p>Instrumen Pendukung Praktikum</p>
+                    </div>
                 </div>
+                <!-- Additional items can be added here -->
             </div>
+            <button class="slider-btn next" id="mainNextBtn"><i class="fas fa-chevron-right"></i></button>
         </div>
+        <div class="gallery-dots" id="mainDots"></div>
         
         <!-- Galeri Lab Farmasetika -->
         <h3 class="welcome-title" style="margin-top: 60px; font-size: 1.8rem;">Galeri Lab Farmasetika</h3>
-        <div class="gallery-grid gallery-grid-wide" style="margin-top: 20px;">
-            <div class="gallery-item">
-                <img src="assets/img/farm1.jpg" alt="Farm1">
-                <div class="gallery-overlay">
-                    <h4>Aktivitas Lab</h4>
-                    <p>Praktikum Farmasetika</p>
+        <div class="gallery-slider-wrapper" style="margin-top: 20px;">
+            <button class="slider-btn prev" id="farmPrevBtn"><i class="fas fa-chevron-left"></i></button>
+            <div class="gallery-slider" id="farmSlider">
+                <div class="gallery-item">
+                    <img src="assets/img/farm1.jpg" alt="Farm1">
+                    <div class="gallery-overlay">
+                        <h4>Aktivitas Lab</h4>
+                        <p>Praktikum Farmasetika</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/farm2.jpg" alt="Farm2">
+                    <div class="gallery-overlay">
+                        <h4>Instrumen</h4>
+                        <p>Peralatan Farmasetika</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/farm3.jpg" alt="Farm3">
+                    <div class="gallery-overlay">
+                        <h4>Sediaan</h4>
+                        <p>Hasil Praktikum</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/farm4.jpg" alt="Farm4">
+                    <div class="gallery-overlay">
+                        <h4>Area Kerja</h4>
+                        <p>Meja Praktikum</p>
+                    </div>
                 </div>
             </div>
-            <div class="gallery-item">
-                <img src="assets/img/farm2.jpg" alt="Farm2">
-                <div class="gallery-overlay">
-                    <h4>Instrumen</h4>
-                    <p>Peralatan Farmasetika</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/farm3.jpg" alt="Farm3">
-                <div class="gallery-overlay">
-                    <h4>Sediaan</h4>
-                    <p>Hasil Praktikum</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/farm4.jpg" alt="Farm4">
-                <div class="gallery-overlay">
-                    <h4>Area Kerja</h4>
-                    <p>Meja Praktikum</p>
-                </div>
-            </div>
+            <button class="slider-btn next" id="farmNextBtn"><i class="fas fa-chevron-right"></i></button>
         </div>
+        <div class="gallery-dots" id="farmDots"></div>
 
         <!-- Galeri Lab TekFar -->
         <h3 class="welcome-title" style="margin-top: 60px; font-size: 1.8rem;">Galeri Lab TekFar</h3>
         <div class="gallery-slider-wrapper" style="margin-top: 20px;">
-            <button class="slider-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn prev" id="tekfarPrevBtn"><i class="fas fa-chevron-left"></i></button>
             <div class="gallery-slider" id="tekfarSlider">
                 <div class="gallery-item">
                     <img src="assets/img/tek1.jpg" alt="Tek1">
@@ -135,7 +146,7 @@
                     <div class="gallery-overlay"><h4>Hasil</h4><p>Dokumentasi Praktikum</p></div>
                 </div>
             </div>
-            <button class="slider-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            <button class="slider-btn next" id="tekfarNextBtn"><i class="fas fa-chevron-right"></i></button>
         </div>
         <div class="gallery-dots" id="tekfarDots"></div>
     </section>
